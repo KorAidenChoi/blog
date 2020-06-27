@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game1.html</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+  background-image:url('data:image/jpeg;base64,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')
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var myGamePiece;
+var myObstacles = [];
+
+function startGame() {
+    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            return;
+        } 
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        x = myGameArea.canvas.width;
+        minHeight = 20;
+        maxHeight = 200;
+        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+        minGap = 50;
+        maxGap = 200;
+        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+        myObstacles.push(new component(10, height, "green", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].x += -1;
+        myObstacles[i].update();
+    }
+    myGamePiece.newPos();    
+    myGamePiece.update();
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function moveup() {
+    myGamePiece.speedY = -1; 
+}
+
+function movedown() {
+    myGamePiece.speedY = 1; 
+}
+
+function moveleft() {
+    myGamePiece.speedX = -1; 
+}
+
+function moveright() {
+    myGamePiece.speedX = 1; 
+}
+
+function clearmove() {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
+</script>
+<div style="text-align:center;width:480px;">
+  <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+  <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+  <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+</div>
+</body>
+</html>
